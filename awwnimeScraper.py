@@ -20,7 +20,7 @@ VERSION = '0.5'
 APP_ID = 'TopImageScraper'
 USERNAME = 'I_Collect_Images'
 USER_AGENT = PLATFORM + ':' + APP_ID + ':' + VERSION + 'by /u/' + USERNAME
-TOP_FOLDER = 'C:\\Users\\<WINDOWS_USER>\\Pictures\\Anime\\Scraped' #removed for Github
+TOP_FOLDER = 'C:\\Users\\<USER>\\Pictures\\Anime\\Scraped' #removed for Github
 
 #other constants
 FILE_TYPES = ['.jpg', '.png']
@@ -55,14 +55,14 @@ def testConnection():
         listing += 1
     print('Test Complete!')
     print('------------------------------------')
-    
+
 def scrapeImages():
     """
     Main entry point to scrape images off the given subreddit
     """
     listings = redditConnection.get_subreddit(subreddit).get_hot(limit=count)
-    for submission in listings:
-        print('getting: ' + submission.url[:35] + ' titled: ' + submission.title[:30])
+    for idx, submission in enumerate(listings):
+        print('#'+ str(idx + 1) + ' getting: ' + submission.url[:35] + ' titled: ' + submission.title[:25])
         data = image(submission.title, submission.url)
         if data.imageType != FILE_TYPES[0] and data.imageType != FILE_TYPES[1]:
             print('^ERROR! Could not download the file. No proper extension was given^')

@@ -3,7 +3,10 @@ Kantai Collection:kancolle;kantai collection;kan colle
 Love Live!:love live;love live
 Madoka Magica:puella magi madoka magica;madoka magica;madoka
 Idolmaster:idolmaster;idolmaster cinderella girls;idolm@ster
-Monogatari Series:mongatari;monogatari series;bakemonogatari;nisemonogatari;mongatari second season;mongatari ss
+Monogatari Series:monogatari;monogatari series;bakemonogatari;nisemonogatari;mongatari second season;mongatari ss
 Hellsing:hellsing;hellsing ultimate
 Working!:working!;working!!;working!!!
 Haruhi Suzumiya:the melancholy of haruhi suzumiya;melancholy;haruhi suzumiya
+Your lie in April:shigatsu wa kimi no uso;your lie in april
+Evangelion:rebuild Of evangelion,evangelion;nge;neon genesis evangelion;evangelion series
+Kiniro Mosaic:kiniro mosaic;kinmoza
