@@ -1,12 +1,16 @@
 Fate:fate/zero;fate;fate/stay night;unlimited blade works;fate series
 Kantai Collection:kancolle;kantai collection;kan colle
 Love Live!:love live;love live
-Madoka Magica:puella magi madoka magica;madoka magica;madoka
-Idolmaster:idolmaster;idolmaster cinderella girls;idolm@ster
+Madoka Magica:puella magi madoka magica;madoka magica;madoka;magica madoka
+Idolmaster:idolmaster;idolmaster cinderella girls;idolm@ster;idolmaster million live!;idolm@ster million live!;idolm@ster cinderella girls
 Monogatari Series:monogatari;monogatari series;bakemonogatari;nisemonogatari;mongatari second season;mongatari ss
 Hellsing:hellsing;hellsing ultimate
 Working!:working!;working!!;working!!!
-Haruhi Suzumiya:the melancholy of haruhi suzumiya;melancholy;haruhi suzumiya
+Haruhi Suzumiya:the melancholy of haruhi suzumiya;melancholy;haruhi suzumiya;haruhi
 Your lie in April:shigatsu wa kimi no uso;your lie in april
-Evangelion:rebuild Of evangelion,evangelion;nge;neon genesis evangelion;evangelion series
+Evangelion:rebuild Of evangelion;evangelion;nge;neon genesis evangelion;evangelion series
 Kiniro Mosaic:kiniro mosaic;kinmoza
+Angel Beats:angel beats;angel beats!
+Aikatsu:aikatsu!;aikatsu
+Gakkou Gurashi:gakkou gurashi;gakkou gurashi!
+Gochuumon wa Usagi Desu ka:gochuumon wa usagi desu ka;gochiusa

@@ -9,9 +9,9 @@ import sys
 import praw             # Reddit python wrapper
 import time             # Used to get the time the image was DL'ed
 import urllib           # Used to download images
-import urllib.request
-from image import image
-import os
+import urllib.request   # ^^^
+from image import image # Custom image class
+import os               # Folder operations
 
 
 # constants for connecting to reddit
@@ -37,7 +37,8 @@ def setup():
         global subreddit, count, includeGifs
         subreddit = sys.argv[1]
         count = int(sys.argv[2])
-        includeGifs = sys.argv[3].upper() == 'TRUE'
+        # Temporarily removing this feature
+        # includeGifs = sys.argv[3].upper() == 'TRUE'
 
 def testConnection():
     """
@@ -51,7 +52,7 @@ def testConnection():
     print('Top 3 submissions in /r/all right now')
     listing = 1
     for submission in testSub.get_hot(limit=3):
-        print('#' + str(listing) + ': ' + submission.url[:35] + ' posted by: ' + submission.author)
+        uprint('#' + str(listing) + ': ' + submission.url[:35] + ' posted by: ' + submission.author)
         listing += 1
     print('Test Complete!')
     print('------------------------------------')
@@ -62,7 +63,7 @@ def scrapeImages():
     """
     listings = redditConnection.get_subreddit(subreddit).get_hot(limit=count)
     for idx, submission in enumerate(listings):
-        print('#'+ str(idx + 1) + ' getting: ' + submission.url[:35] + ' titled: ' + submission.title[:25])
+        uprint('#'+ str(idx + 1) + ' getting: ' + submission.url[:35] + ' titled: ' + submission.title[:25])
         data = image(submission.title, submission.url)
         if data.imageType != FILE_TYPES[0] and data.imageType != FILE_TYPES[1]:
             print('^ERROR! Could not download the file. No proper extension was given^')
@@ -71,6 +72,17 @@ def scrapeImages():
         os.makedirs(path, exist_ok=True)
         if not os.path.isfile(path + '\\' + data.fileName):            
             urllib.request.urlretrieve(data.url, TOP_FOLDER + '\\' + data.folderName+'\\'+data.fileName)
+
+# http://stackoverflow.com/questions/14630288/unicodeencodeerror-charmap-codec-cant-encode-character-maps-to-undefined
+# Unicode print function. This is to ensure that unicode strings in post titles don't break stdout
+def uprint(*objects, sep=' ', end='\n', file=sys.stdout):
+    enc = file.encoding
+    if enc == 'UTF-8':
+        print(*objects, sep=sep, end=end, file=file)
+    else:
+        f = lambda obj: str(obj).encode(enc, errors='backslashreplace').decode(enc)
+        print(*map(f, objects), sep=sep, end=end, file=file)
+
         
 if __name__ == "__main__":
     setup()

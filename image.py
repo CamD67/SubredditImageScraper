@@ -23,19 +23,20 @@ class image:
         self.url = url
         
         #search for the folder title, in square brackets
-        if title.find('[') == -1 or title.find(']') == 1:
+        if title.find('[') == -1 or title.find(']') == -1:
             # Author didn't add in the source, file under unknown
             self.folderName = 'Unknown'
             self.fileName = title
         else:
             bracketLastIndex = title.rindex(']')
-            bracketFirstIndex = title.rindex('[')        
+            bracketFirstIndex = title.rindex('[')
             #get the folder name, which is usually between brackets
             self.removeKeyWords(title[bracketFirstIndex + 1:bracketLastIndex])
+            self.folderName = self.removeSpecial(self.folderName)
             self.simplifyFolder()
             #get the file name, which is everything before and after the brackets
-            title = self.removeSpecial(title)        
-            self.fileName = title[:bracketFirstIndex - 1] + title[bracketLastIndex + 1:]        
+            self.fileName = title[:bracketFirstIndex - 1] + title[bracketLastIndex + 1:]  
+            self.fileName = self.removeSpecial(self.fileName)      
             self.fileName = self.fileName.replace(' ', '_')[:20]
         
         # add on the image type
